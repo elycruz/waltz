@@ -9,7 +9,8 @@ export class Digraph {
   static fromLines(lines: string[]): Digraph {
     const vertCount = parseInt(lines[0]);
     const digraph = new Digraph(vertCount);
-    for (let i = 2; i < lines.length; i++) {
+    const len = lines.length;
+    for (let i = 2; i < len; i++) {
       const [v, w] = lines[i].split(/\s+/).map(Number);
       digraph.addEdge(v, w);
     }
